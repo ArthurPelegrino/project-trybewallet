@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { emailAction } from '../redux/actions';
+import './Login.css';
 
 class Login extends React.Component {
   state = {
@@ -43,7 +44,7 @@ class Login extends React.Component {
     // console.log(myUser);
     // console.log(dispatch);
     return (
-      <div>
+      <div className="formulario">
         <form>
           <div>
             <h4>E-mail</h4>
@@ -66,6 +67,7 @@ class Login extends React.Component {
             />
           </div>
           <button
+            className="button"
             type="button"
             disabled={ button }
             onChange={ this.handleChange }
@@ -81,7 +83,9 @@ class Login extends React.Component {
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  history: PropTypes.objectOf(PropTypes.func).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default connect(null)(Login);
