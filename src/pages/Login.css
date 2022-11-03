@@ -1,9 +1,9 @@
-/* .formulario {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.formulario {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
-    margin-top: 10px;
-} */
+  margin-top: 10px;
+}
