@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { emailAction } from '../redux/actions';
 import './Login.css';
+// import WalletForm from '../components/WalletForm';
 
 class Login extends React.Component {
   state = {
