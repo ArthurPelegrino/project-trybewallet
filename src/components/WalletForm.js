@@ -20,6 +20,10 @@ class WalletForm extends Component {
     ))
   );
 
+  // handleAddExpenses () => {
+
+  // }
+
   render() {
     const { currency } = this.props;
     console.log(currency);
