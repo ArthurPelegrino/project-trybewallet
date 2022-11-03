@@ -60,6 +60,10 @@ class WalletForm extends Component {
         <select data-testid="tag-input">
           { this.handleSelect(tagInput)}
         </select>
+
+        <button type="button">
+          Adicionar despesa
+        </button>
       </div>
     );
   }
