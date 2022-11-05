@@ -7,11 +7,10 @@ class Wallet extends React.Component {
   handleTotal = () => {
     let acumulador = 0;
     const { totalValue } = this.props;
-    console.log('total value', totalValue);
     totalValue.forEach((elemento) => {
       const myCurrency = elemento.currency;
-      const vouMultiplicar = elemento.exchangeRates[myCurrency].ask;
-      acumulador += +elemento.value * vouMultiplicar;
+      const askValue = elemento.exchangeRates[myCurrency].ask;
+      acumulador += +elemento.value * askValue;
     });
     return acumulador.toFixed(2);
   };

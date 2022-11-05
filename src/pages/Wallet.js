@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import WalletForm from '../components/WalletForm';
 import Header from '../components/Header';
 import './pagescss/Wallet.css';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class Wallet extends React.Component {
       <div>
         <Header />
         <WalletForm />
+        <Table />
       </div>
     );
   }
