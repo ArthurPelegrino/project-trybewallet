@@ -1,6 +1,7 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { RECEIVE_ECONOMY_DATA } from '../actions';
+import { RECEIVE_COMPLETE_ECONOMY_DATA,
+  RECEIVE_ECONOMY_DATA, SAVE_BUTTON_DATA } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -10,12 +11,26 @@ const INITIAL_STATE = {
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
+  // console.log(action.payload);
   switch (action.type) {
   case RECEIVE_ECONOMY_DATA:
     return {
       ...state,
       currencies: Object.keys(action.payload).filter((elemento) => elemento !== 'USDT'),
     };
+  case SAVE_BUTTON_DATA:
+    return {
+      ...state,
+      expenses:
+        [...state.expenses,
+          action.payload,
+        ],
+    };
+  // case RECEIVE_COMPLETE_ECONOMY_DATA:
+  //   return {
+  //     ...state,
+  //     exchangeRates: action.payload,
+  //   };
   default:
     return state;
   }
