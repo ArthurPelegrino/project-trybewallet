@@ -5,7 +5,6 @@ export const USER_EMAIL = 'USER_EMAIL';
 export const REQUEST_ECONOMY_DATA = 'REQUEST_ECONOMY_DATA';
 export const RECEIVE_ECONOMY_DATA = 'RECEIVE_ECONOMY_DATA';
 export const SAVE_BUTTON_DATA = 'SAVE_BUTTON_DATA';
-export const RECEIVE_COMPLETE_ECONOMY_DATA = 'RECEIVE_COMPLETE_ECONOMY_DATA';
 
 export const emailAction = (payload) => ({
   type: USER_EMAIL,
