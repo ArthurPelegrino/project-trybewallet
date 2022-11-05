@@ -1,7 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { RECEIVE_COMPLETE_ECONOMY_DATA,
-  RECEIVE_ECONOMY_DATA, SAVE_BUTTON_DATA } from '../actions';
+import { RECEIVE_ECONOMY_DATA, SAVE_BUTTON_DATA } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
