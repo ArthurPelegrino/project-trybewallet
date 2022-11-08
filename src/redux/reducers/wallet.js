@@ -1,6 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { RECEIVE_ECONOMY_DATA, SAVE_BUTTON_DATA } from '../actions';
+import { DELETE_BUTTON, RECEIVE_ECONOMY_DATA, SAVE_BUTTON_DATA } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -24,6 +24,12 @@ const wallet = (state = INITIAL_STATE, action) => {
         [...state.expenses,
           action.payload,
         ],
+    };
+  case DELETE_BUTTON:
+    return {
+      ...state,
+      expenses:
+      [...state.expenses.filter((elemento) => elemento.id !== action.payload)],
     };
   // case RECEIVE_COMPLETE_ECONOMY_DATA:
   //   return {

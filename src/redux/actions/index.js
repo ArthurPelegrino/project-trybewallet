@@ -5,6 +5,7 @@ export const USER_EMAIL = 'USER_EMAIL';
 export const REQUEST_ECONOMY_DATA = 'REQUEST_ECONOMY_DATA';
 export const RECEIVE_ECONOMY_DATA = 'RECEIVE_ECONOMY_DATA';
 export const SAVE_BUTTON_DATA = 'SAVE_BUTTON_DATA';
+export const DELETE_BUTTON = 'DELETE_BUTTON';
 
 export const emailAction = (payload) => ({
   type: USER_EMAIL,
@@ -14,8 +15,12 @@ export const emailAction = (payload) => ({
 export const saveButtonData = (payload) => ({
   type: SAVE_BUTTON_DATA,
   payload,
-}
-);
+});
+
+export const deleteButton = (payload) => ({
+  type: DELETE_BUTTON,
+  payload,
+});
 
 // Actions para realizar o meu fetch
 

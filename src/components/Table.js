@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../pages/pagescss/Login.css';
 import PropTypes from 'prop-types';
-
-const mapStateToProps = (state) => ({
-  description: state.wallet.expenses,
-});
+import { deleteButton } from '../redux/actions';
 
 class Table extends Component {
   render() {
     // mapStateToProps()
-    const { description } = this.props;
+    const { description, dispatch } = this.props;
     // console.log('description', description);
     return (
       <table>
@@ -46,7 +43,13 @@ class Table extends Component {
                 </td>
                 <td>Real</td>
                 <td>
-                  <button type="button" data-testid="delete-btn">Excluir</button>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                    onClick={ () => { dispatch(deleteButton(info.id)); } }
+                  >
+                    Excluir
+                  </button>
                 </td>
               </tr>
             ))
@@ -57,9 +60,14 @@ class Table extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  description: state.wallet.expenses,
+});
+
 Table.propTypes = {
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
   map: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);
