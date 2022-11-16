@@ -1,10 +1,8 @@
 import { screen } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react-dom/test-utils';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import App from '../App';
-import Login from '../pages/Login';
 import Wallet from '../pages/Wallet';
 
 describe('', () => {
@@ -31,8 +29,9 @@ describe('', () => {
     expect(history.location.pathname).toBe('/carteira');
   });
   it('WalletTest', () => {
-    const { history } = renderWithRouterAndRedux(<Wallet />);
+    renderWithRouterAndRedux(<Wallet />);
     const formTest = screen.getByRole('spinbutton');
+    expect(formTest).toBeInTheDocument();
     screen.logTestingPlaygroundURL();
   });
 });
